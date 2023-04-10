@@ -12,7 +12,7 @@ t_tic = tic;
 frangi_cpu = frangi_filter(vsl_im, vessel_parameters);
 fprintf("This implementation on CPU takes %.2f seconds\n", toc(t_tic))
 % On GPU: 1.1 second
-im_gpu = gpuArray(vsl_im);
+im_gpu = rescale(gpuArray(vsl_im));
 t_tic = tic;
 frangi_gpu = frangi_filter(im_gpu, vessel_parameters);
 fprintf("This implementation on GPU takes %.2f seconds\n", toc(t_tic));
